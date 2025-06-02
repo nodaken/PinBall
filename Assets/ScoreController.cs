@@ -4,14 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class ScoarContl : MonoBehaviour
+public class ScoreController : MonoBehaviour
 {
 
     //スコア変数の初期化
-    private int score = 0;
+    public int score = 0;
     //スコアを表示するテキスト
     private GameObject ScoreText;
-
 
     // Start is called before the first frame update
     void Start()
@@ -20,12 +19,10 @@ public class ScoarContl : MonoBehaviour
         this.ScoreText = GameObject.Find("ScoreText");
     }
 
-
     // Update is called once per frame
     void Update()
     {
- 
+        //スコアをTextに代入する
+        this.ScoreText.GetComponent<Text>().text = score.ToString();
     }
-
-
 }
